@@ -1,0 +1,82 @@
+[
+  {
+      "model": "renderer.sample",
+      "pk": 6,
+      "fields": {
+          "filename": "808-Kick2.wav",
+          "display": "808 Kick 2"
+      }
+  },
+  {
+      "model": "renderer.sample",
+      "pk": 7,
+      "fields": {
+          "filename": "Jungle-Kick-1.wav",
+          "display": "Jungle BD1"
+      }
+  },
+  {
+      "model": "renderer.sample",
+      "pk": 8,
+      "fields": {
+          "filename": "Jungle-Kick-2.wav",
+          "display": "Jungle BD2"
+      }
+  },
+  {
+      "model": "renderer.sample",
+      "pk": 9,
+      "fields": {
+          "filename": "Jungle-Snare-1.wav",
+          "display": "Jungle SD1"
+      }
+  },
+  {
+      "model": "renderer.sample",
+      "pk": 10,
+      "fields": {
+          "filename": "Jungle-Closed-Hat-1.wav",
+          "display": "Jungle CH1"
+      }
+  },
+  {
+      "model": "renderer.sample",
+      "pk": 11,
+      "fields": {
+          "filename": "Pad-Strings-1.wav",
+          "display": "Pad: Strings 1"
+      }
+  },
+  {
+      "model": "renderer.sample",
+      "pk": 12,
+      "fields": {
+          "filename": "Synth-Distorted-1.wav",
+          "display": "Syn: Dist 1"
+      }
+  },
+  {
+      "model": "renderer.sample",
+      "pk": 13,
+      "fields": {
+          "filename": "Bass-Pulse-1.wav",
+          "display": "Bass: Pulse 1"
+      }
+  },
+  {
+      "model": "renderer.sample",
+      "pk": 14,
+      "fields": {
+          "filename": "808-Clap1.wav",
+          "display": "808 Clap 1"
+      }
+  },
+  {
+      "model": "renderer.sample",
+      "pk": 15,
+      "fields": {
+          "filename": "808-Rim1.wav",
+          "display": "808 Rim 1"
+      }
+  }
+]
