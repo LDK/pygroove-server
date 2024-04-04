@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn pygroove.wsgi
+web: gunicorn --chdir pygroove pygroove.wsgi
