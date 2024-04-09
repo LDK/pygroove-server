@@ -1,2 +1,2 @@
 release: python3 manage.py migrate
-web: gunicorn --pythonpath pygroove pygroove.wsgi
+web: gunicorn pygroove.wsgi
