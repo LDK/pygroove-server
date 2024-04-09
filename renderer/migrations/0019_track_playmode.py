@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('renderer', '0018_more_samples'),
+        ('renderer', '0017_step_retrigger'),
     ]
 
     operations = [

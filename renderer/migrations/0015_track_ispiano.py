@@ -5,8 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
+    # dependencies = [
+    #     ('renderer', '0014_piano_sample_1'),
+    # ]
+
     dependencies = [
-        ('renderer', '0014_piano_sample_1'),
+        ('renderer', '0013_step_index'),
     ]
 
     operations = [
