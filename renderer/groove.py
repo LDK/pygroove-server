@@ -162,14 +162,14 @@ def chop(sound:AudioSegment, startPct:float, endPct:float):
     return slices[1]
 
 def split(wavFile,pieces):
-    soundLoc = './audio/uploaded/'+wavFile
+    soundLoc = './static/audio/uploaded/'+wavFile
     sound = AudioSegment.from_wav(soundLoc)
     slices = []
     sliceLen = int(len(sound) / pieces)
     for i, chunk in enumerate(sound[::sliceLen]):
         if (i >= pieces):
             break;
-        sliceName = "./audio/uploaded/split/{fileName}-{num}.wav".format(fileName=wavFile.replace('.wav',''),num=i+1)
+        sliceName = "./static/audio/uploaded/split/{fileName}-{num}.wav".format(fileName=wavFile.replace('.wav',''),num=i+1)
         sliceInfo = {'filename': sliceName, 'parent': soundLoc, 'start': i*sliceLen, 'end': (i+1)*sliceLen, 'len': len(chunk)}
         with open(sliceName, "wb") as f:
             chunk.export(f, format="wav")
@@ -177,7 +177,7 @@ def split(wavFile,pieces):
     return slices
 
 def getStepSound(step, track, bpm:int):
-    trackWav = './audio/' + track['sample']['filename']
+    trackWav = './static/audio/' + track['sample']['filename']
     stepSound = AudioSegment.from_wav(trackWav) - 12
 
     origLen = len(stepSound)

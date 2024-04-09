@@ -55,7 +55,7 @@ class SampleListSet(viewsets.ModelViewSet):
             if waveform_image.name:  # Check if the image field has a file associated with it
                 try:
                     # Construct the URL for the waveform image
-                    waveform_url = (request.build_absolute_uri(settings.STATIC_URL) + waveform_image.name).replace('/./waveform', '')
+                    waveform_url = (request.build_absolute_uri(settings.STATIC_URL) + waveform_image.name).replace('/./static/waveform', '')
                     sample_output['waveform'] = waveform_url
                 except IOError:
                     # Handle the case where the image file does not exist or cannot be opened
@@ -68,8 +68,8 @@ class SampleListSet(viewsets.ModelViewSet):
 
 def saveSampleImage(data):
     fName = data['filename']
-    fLoc = pjoin("./audio", fName)
-    imgLoc = pjoin("./waveform", fName.replace('.wav','.png'))
+    fLoc = pjoin("./static/audio", fName)
+    imgLoc = pjoin("./static/waveform", fName.replace('.wav','.png'))
     waveImg = Waveform(fLoc).save()
 
     rename(waveImg,imgLoc)
@@ -137,7 +137,7 @@ class SampleImageView(APIView):
     def get(self, request, pk=None):
         sample = Sample.objects.get(pk=pk)
         serializer = SampleSerializer(sample)
-        fLoc = pjoin("./audio", sample.filename)
+        fLoc = pjoin("./static/audio", sample.filename)
 
         reverse:bool = (request.GET.get('rv', False) in ['true', 'True', True])
         trim:bool = (request.GET.get('tr', False) in ['true', 'True', True])
@@ -175,7 +175,7 @@ class SampleAudioView(APIView):
 
     def get(self, request, pk=None):
         sample = Sample.objects.get(pk=pk)
-        fLoc = pjoin("./audio", sample.filename)
+        fLoc = pjoin("./static/audio", sample.filename)
 
         reverse:bool = (request.GET.get('rv', False) in ['true', 'True', True])
         trim:bool = (request.GET.get('tr', False) in ['true', 'True', True])
@@ -259,7 +259,7 @@ class SampleProcessView(APIView):
 
         for sample in samples:
             serializer = SampleSerializer(sample)
-            fLoc = pjoin("./audio", sample.filename)
+            fLoc = pjoin("./static/audio", sample.filename)
             imgData = saveSampleImage(serializer.data)
             print(imgData)
             sample.waveform = imgData['image']
@@ -315,7 +315,7 @@ class TrackSampleView(APIView):
         print("frames", frames)
         print("sampl", sample)
 
-        fLoc = pjoin("./audio", sample.filename)
+        fLoc = pjoin("./static/audio", sample.filename)
 
         sampleOptions = {
             'normalize': normalize,

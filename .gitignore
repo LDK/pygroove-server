@@ -1,5 +1,5 @@
-audio/uploaded
-img/waveform/uploaded
+static/audio/uploaded
+static/waveform/uploaded
 node_modules
 __pycache__
 tmp
@@ -7,3 +7,4 @@ rendered
 src/reference
 server/.env
 old
+.env
