@@ -1,5 +1,8 @@
 static/audio/uploaded
 static/waveform/uploaded
+static/*.png
+static/*.wav
+static/*.gz
 node_modules
 __pycache__
 tmp
